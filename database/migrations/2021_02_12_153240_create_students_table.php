@@ -18,6 +18,7 @@ class CreateStudentsTable extends Migration
             $table->string('cne');
             $table->string('firstName');
             $table->string('secondName');
+            $table->integer('age');
             $table->string('speciality');
             $table->timestamps();
         });
