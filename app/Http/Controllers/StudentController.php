@@ -106,5 +106,6 @@ class StudentController extends Controller
     {
         $student=Student::find($id);
         $student->delete();
+        redirect('/');
     }
 }
