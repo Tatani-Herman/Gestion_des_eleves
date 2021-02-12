@@ -47,7 +47,7 @@ class StudentController extends Controller
         $student->age=$request->input('age');
         $student->speciality=$request->input('speciality');
         $student->save();
-        redirect('/');
+        return redirect('/');
 
     }
 
@@ -93,7 +93,7 @@ class StudentController extends Controller
         $student->age=$request->input('age');
         $student->speciality=$request->input('speciality');
         $student->save();
-        redirect('/');
+        return redirect('/');
     }
 
     /**
@@ -106,6 +106,6 @@ class StudentController extends Controller
     {
         $student=Student::find($id);
         $student->delete();
-        redirect('/');
+        return redirect('/');
     }
 }
