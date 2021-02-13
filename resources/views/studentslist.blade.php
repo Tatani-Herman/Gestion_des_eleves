@@ -27,6 +27,7 @@
       <td>
          
          <a href="{{ url('/edit/' .$student->id) }}" class="btn btn-sm btn-warning">Editer</a>
+         <a href="{{ url('/delete/' .$student->id) }}" class="btn btn-sm btn-danger">Supprimer</a>
       </td>
   @endforeach
   </tbody>
