@@ -108,4 +108,20 @@ class StudentController extends Controller
         $student->delete();
         return redirect('/');
     }
+
+
+
+     /**
+     * Display a listing of Student per given class
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexClass($class)
+    {
+        //
+        $students= Student::where('speciality',$class)->get();
+        return view('student',['students'=>$students,'layout'=>'index']);
+    }
+
+
 }
