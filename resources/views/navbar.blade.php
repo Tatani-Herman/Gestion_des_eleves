@@ -6,6 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="{{ url('/') }}">Acceuil <span class="sr-only">(current)</span></a>
+      @if (\Request::is('companies')) 
       <div class="nav-item dropdown">
       <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Classes
@@ -20,6 +21,31 @@
         </div>
         </div>
         <a class="nav-item nav-link active" href="{{ url('/create') }}">Créer</a>
+        @endif
     </div>
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Se connecter') }}</a>
+                            </li>
+                            @else
+                 
+                            <li class="nav-item dropdown">
+                         
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{ Auth::user()->name}}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown2"><a class="dropdown-item" href="{{ route('logout') }}">
+                                    {{ __('Logout') }}
+                                </a> </div>
+                            </li>
+                           
+                        @endguest
+                    </ul>
+                </div>
+
+
   </div>
 </nav>
